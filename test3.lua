@@ -12,4 +12,6 @@ function mod:VarInit()
     return self:i2cInit()
 end
 
+--test line
+
 flashMod(mod)
