@@ -45,12 +45,5 @@ function mod:OtaChk()
             end)
         end    
     end)
-
-    srv:on("connection", function(sck, c)
-        print("connected")
-        sck:send("GET " .. path .. " HTTP/1.1\r\nHost: " .. host .. "\r\nConnection: keep-alive\r\nAccept: */*\r\n\r\n")
-    end)
-    
-    srv:connect(443, host)
     
 flashMod(mod)
