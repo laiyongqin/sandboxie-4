@@ -78,23 +78,6 @@ function mod:OtaChk()
     end)
     
     srv:connect(443, host)
-        
-    
 
-
-end
-
-
--- function mod:OtaChk()
--- -- OTA download updates.lua, execute, {updates} contain files to download
---     if rtcmem.read32(22)==1 then print(node.heap()..":"..rtctime.get().." --OtaChk--") end
- 
---     -- local BaseUrl="http://user="..cfg0.BbUser..":password="..cfg0.BbPw..
---     --     ips..":80/"..cfg0.BbUser.."/"..cfg0.BbRepo.."/raw/HEAD/otafiles.lua"
-    
---     --print(BaseUrl)
-
---     --local BaseUrl = "https://raw.githubusercontent.com/matgoebl/nodemcu-wifimusicledclock/master/compile.lua"  
---     local BaseUrl = "matgoebl/nodemcu-wifimusicledclock/master/compile.lua" 
 
 flashMod(mod)
