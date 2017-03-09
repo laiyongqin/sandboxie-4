@@ -97,22 +97,4 @@ end
 --     --local BaseUrl = "https://raw.githubusercontent.com/matgoebl/nodemcu-wifimusicledclock/master/compile.lua"  
 --     local BaseUrl = "matgoebl/nodemcu-wifimusicledclock/master/compile.lua" 
 
---     sk = net.createConnection(net.TCP, 0)
---     sk:on("receive", function(sck, c) print(c) end )
---     sk:on("connection", function(sck,c)
---         -- Wait for connection before sending.
---         sck:send("GET / HTTP/1.1\r\nHost: BaseUrl\r\nConnection: keep-alive\r\nAccept: */*\r\n\r\n")
---     end)
---     sk:connect(80,"raw.githubusercontent.com")
-
-
---     -- if rtcmem.read32(26)==1 then
---     --     http.get(BaseUrl, "", function(code,data)
---     --         print("data: "..data)
---     --         print("code: "..code)
---     --         if (code ~= 200) then
---     --             print("http error:",code)
---     --         else
-
-
 flashMod(mod)
