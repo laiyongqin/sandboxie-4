@@ -24,4 +24,5 @@ function mod:Dummy()
     if rtcmem.read32(22)==1 then print(node.heap()..":"..rtctime.get().." --Dummy End--") end
 end
 
+--testt
 flashMod(mod)
