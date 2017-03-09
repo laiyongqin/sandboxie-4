@@ -12,17 +12,4 @@ function mod:VarInit()
     return self:i2cInit()
 end
 
-function mod:Dummy()
--- init variables in RTC Memory
--- 21=Version(false),22=HeapMem(true), 23=Idle(true),24=MqttFail(false)
--- 25=Operational Mode(3)
-    if rtcmem.read32(22)==1 then print(node.heap()..":"..rtctime.get().." --Dummy Start--") end
-    --self:SaveJson("cfg0",cfg0)
-    --cfg0=nil
-    --print(mydata)
-    collectgarbage()
-    if rtcmem.read32(22)==1 then print(node.heap()..":"..rtctime.get().." --Dummy End--") end
-end
-
---testk
 flashMod(mod)
