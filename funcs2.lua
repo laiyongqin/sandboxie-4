@@ -7,7 +7,6 @@ function mod:OtaChk()
     local host = "raw.githubusercontent.com"
     local path = "/NicolSpies/sandboxie/master/funcs1.lua"
     local srv = tls.createConnection(net.TCP, 0)
-
     srv:on("receive", function(sck, c) 
         if flag then 
             local a,b,k,m
