@@ -9,13 +9,6 @@ function mod:i2cInit()
 end
 
 function mod:BatRead()
--- 0x90 For ED0 slave address (0x48 without low bit)    
--- Config register:
---   7   6 5 4   3   2   1    0
--- STart 0 0 SC DR1 DR0 PGA1 PGA0
--- 0x8C by default (Data Rate 15 SPS, continuous conversion, Gain=1)
--- SC = 1 - single conversion; 0 - continuous conversion.
-
     if rtcmem.read32(22)==1 then print(node.heap()..":"..rtctime.get().." --BatRead--") end
     i2c.start(0)
     if i2c.address(0, 0x48, i2c.RECEIVER) then
@@ -70,6 +63,5 @@ function mod:OtaChk()
     end)
     
     srv:connect(443, host)
-
-
+    
 flashMod(mod)
