@@ -61,14 +61,6 @@ function mod:OtaChk()
                 return self:Dummy()
             end)
 
-            --print(c)
-            --mydata=c
-            --print(c)
-            --c=nil
-            --srv:close()
-            --srv=nil
-            --collectgarbage()
-            --return self:Dummy()
         end    
     end)
 
