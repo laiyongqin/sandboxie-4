@@ -1,13 +1,5 @@
 local mod = {MOD_NAME = "mod"}
 
-function mod:i2cInit()
--- i2c bus setup
-    if rtcmem.read32(22)==1 then print(node.heap()..":"..rtctime.get().." --i2cInit--") end
-    i2c.setup(0,4,3,i2c.SLOW)
-    tmr.delay(500)
-    return self:BatRead()
-end
-
 function mod:BatRead()
     if rtcmem.read32(22)==1 then print(node.heap()..":"..rtctime.get().." --BatRead--") end
     i2c.start(0)
@@ -44,8 +36,6 @@ function mod:OtaChk()
             file.write(m) 
             file.close()
 
-            --mydata = c
-
             tmr.create():alarm(5000 , tmr.ALARM_SINGLE, function ()
                 --a,b = string.find(c,"\r\n\r\n")
                 --c=string.sub(c,b)
@@ -53,7 +43,6 @@ function mod:OtaChk()
                 srv:close()
                 return self:Dummy()
             end)
-
         end    
     end)
 
