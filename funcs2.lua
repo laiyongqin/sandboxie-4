@@ -113,19 +113,6 @@ end
 --     --         if (code ~= 200) then
 --     --             print("http error:",code)
 --     --         else
---     --             print("body size:",#data)
---     --             pcall(loadstring(data))
---     --             if #OtaFiles==0 then
---     --                 OtaFiles=nil
---     --                 return self:Dummy() --no OTA required
---     --             else
---     --                 return self:OtaGet() --get files
---     --             end    
---     --         end
---     --     end)
---     -- else
---     --     return self:Dummy() --WiFi no connected, no update possible
---     -- end            
---end
+
 
 flashMod(mod)
