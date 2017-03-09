@@ -24,24 +24,4 @@ function mod:Dummy()
     if rtcmem.read32(22)==1 then print(node.heap()..":"..rtctime.get().." --Dummy End--") end
 end
 
-function mod:LoadJson(JsonFile)
---read json file return as table
-    local f = {}
-    local Myline
-    if file.open(JsonFile.."1.json","r") then --main file
-    	Myline = file.readline()
-    end	
-    if #Myline == 0 or Myline == nil then
-        file.close()
-        file.remove(JsonFile.."1.json")
-        file.rename(JsonFile.."2.json",JsonFile.."1.json")
-        if file.open(JsonFile.."1.json","r") then
-        	Myline = file.readline()
-        end
-    end
-    file.close()
-    f = cjson.decode(Myline)
-    return f
-end
-
 flashMod(mod)
