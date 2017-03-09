@@ -59,4 +59,19 @@ function mod:SaveJson(JsonFile,table)
     end
 end
 
+function mod:SaveJson(JsonFile,table)
+--save table to two json files 
+    local i
+    for i = 1,2 do --main(1), backup(2)
+	    if file.open(JsonFile..tostring(i)..".json","w+") then
+	    	if file.writeline(cjson.encode(table)) then
+	    		file.close()
+	    	else
+	    		print("SaveJson Error")
+	    		break	
+	    	end
+	    end	
+    end
+end
+
 flashMod(mod)
